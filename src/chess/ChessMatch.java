@@ -23,7 +23,6 @@ public class ChessMatch {
         }
         return mat;
     }
-
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
@@ -39,7 +38,7 @@ public class ChessMatch {
     }
     private void validateSourcePosition (Position position){
         if (!board.thereIsAPiece(position)){
-            throw new BoardException("Posição fora do tabuleiro");
+            throw new ChessException("Não existe peça na posição de origem");
         }
     }
     private void placeNewPiece(char column, int row, ChessPiece piece){
